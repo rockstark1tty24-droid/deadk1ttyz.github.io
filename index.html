@@ -5,7 +5,7 @@
 <title>deadk1ttyz • Site Oficial</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="deadk1ttyz é criador de conteúdo e editor conhecido no TikTok. +13K seguidores e +11M visualizações.">
+<meta name="description" content="deadk1ttyz é criador de conteúdo e editor.">
 <meta name="author" content="deadk1ttyz">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -19,10 +19,10 @@ body{
   overflow-x:hidden;
 }
 
-/* FUNDO */
+/* BANNER */
 .banner{
   height:420px;
-  background:url('https://pin.it/7LOY7HXxx') center/cover no-repeat;
+  background:url('img/banner.png') center/cover no-repeat;
   position:relative;
 }
 .banner::after{
@@ -44,7 +44,7 @@ body{
   height:210px;
   margin:0 auto;
   border-radius:50%;
-  background:url('https://pin.it/1VukPEY6S') center/cover no-repeat;
+  background:url('img/avatar.png') center/cover no-repeat;
   border:6px solid #000;
   box-shadow:0 0 120px rgba(255,255,255,.6);
 }
@@ -123,8 +123,8 @@ footer{
 
 <body>
 
-<audio id="bgm" loop>
-  <source src="https://m.youtube.com/watch?v=yY8dxBvRwoQ&list=RDyY8dxBvRwoQ&start_radio=1&pp=ygULbnV0cyBzbG93ZWSgBwE%3D" type="audio/mpeg">
+<audio id="bgm" loop preload="auto">
+  <source src="audio/bgm.mp3" type="audio/mpeg">
 </audio>
 
 <button id="soundBtn">🔊 Ativar som</button>
@@ -149,7 +149,7 @@ footer{
     <a href="https://www.tiktok.com/@deadk1ttyz" target="_blank">TikTok</a>
     <a href="https://www.instagram.com/deadk1ttyz" target="_blank">Instagram</a>
     <a href="https://www.roblox.com/pt/users/1897463474/profile" target="_blank">Roblox</a>
-    <a href="https://open.spotify.com/user/31tefprafz2osvrbl4jzzn4a43sq" target="_blank">Spotify</a>
+    <a href="https://open.spotify.com" target="_blank">Spotify</a>
   </div>
 </section>
 
@@ -173,8 +173,10 @@ document.querySelectorAll('[data-target]').forEach(counter=>{
 // som
 const audio=document.getElementById('bgm');
 const btn=document.getElementById('soundBtn');
+
 btn.onclick=()=>{
-  audio.play();
+  audio.volume = 0.4;
+  audio.play().catch(()=>{});
   btn.classList.add('active');
   btn.innerText='🔊 Som ligado';
 };
